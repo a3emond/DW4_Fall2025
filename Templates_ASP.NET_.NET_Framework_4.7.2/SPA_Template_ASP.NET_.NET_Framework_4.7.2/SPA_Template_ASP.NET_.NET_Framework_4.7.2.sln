@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPA_Template_ASP.NET_.NET_Framework_4.7.2", "SPA_Template_ASP.NET_.NET_Framework_4.7.2\SPA_Template_ASP.NET_.NET_Framework_4.7.2.csproj", "{2C3360F5-68F6-493D-B2C8-F09B9F9F572A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C3360F5-68F6-493D-B2C8-F09B9F9F572A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3360F5-68F6-493D-B2C8-F09B9F9F572A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3360F5-68F6-493D-B2C8-F09B9F9F572A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3360F5-68F6-493D-B2C8-F09B9F9F572A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6746C74A-7031-4DA7-986A-72521174905D}
+	EndGlobalSection
+EndGlobal

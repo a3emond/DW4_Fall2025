@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI_Template_ASP.NET_.NET_Framework_4.7.2", "WebAPI_Template_ASP.NET_.NET_Framework_4.7.2\WebAPI_Template_ASP.NET_.NET_Framework_4.7.2.csproj", "{A05A6D14-6AFD-4702-A2F9-EC9B2F099971}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A05A6D14-6AFD-4702-A2F9-EC9B2F099971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05A6D14-6AFD-4702-A2F9-EC9B2F099971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05A6D14-6AFD-4702-A2F9-EC9B2F099971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05A6D14-6AFD-4702-A2F9-EC9B2F099971}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19D51C62-B578-4061-A8EB-920DFBDB3239}
+	EndGlobalSection
+EndGlobal

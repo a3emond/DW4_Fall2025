@@ -1,0 +1,48 @@
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=password
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+      - ./init-sql:/docker-entrypoint-initdb.d
+    networks:
+      - devnet
+    restart: unless-stopped
+
+volumes:
+  mssql_data:
+
+networks:
+  devnet:
+    driver: bridge
+
+# ==========================================
+# Connection strings for quick reference:
+#
+# With explicit database (recommended):
+#   Server=localhost,1433;
+#   Database=main-db;
+#   User Id=sa;
+#   Password=password;
+#   TrustServerCertificate=True;
+#
+# Without database (connects to master):
+#   Server=localhost,1433;
+#   User Id=sa;
+#   Password=password;
+#   TrustServerCertificate=True;
+#
+# From another container on the 'devnet' network:
+#   Server=mssql,1433;
+#   Database=main-db;
+#   User Id=sa;
+#   Password=password;
+#   TrustServerCertificate=True;
+# ==========================================
+

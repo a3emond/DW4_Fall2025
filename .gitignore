@@ -1,0 +1,107 @@
+# =========================
+# Visual Studio / Rider
+# =========================
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider caches
+.idea/
+*.iml
+out/
+
+# =========================
+# Build Output
+# =========================
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+TestResults/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.vsp
+
+# =========================
+# ASP.NET Temporary Files
+# =========================
+AppPackages/
+App_Data/aspnet-client/
+
+# =========================
+# MSSQL Database Files
+# =========================
+*.mdf        # primary database file
+*.ldf        # log file
+*.ndf        # secondary data file
+*.bak        # backup
+*.trn        # transaction log backup
+*.dacpac     # Data-tier app package
+*.bacpac     # BACPAC export
+
+# Local DB auto-created files
+*.dbmdl
+*.sqlproj.user
+
+# =========================
+# SQL Dumps (ignore large raw dumps, but keep schema/migrations)
+*.sql
+!schema.sql
+!migrations/**
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.nuget.props
+*.nuget.targets
+
+# =========================
+# User-specific
+# =========================
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+*.log
+*.orig
+
+# =========================
+# Configuration
+# =========================
+*.config.user
+*.secret.json
+secrets.json
+
+# =========================
+# Docker
+# =========================
+.docker/
+docker-compose.override.yml
+.env
+*.pid
+*.seed
+*.data/
+*.tar
+
+# =========================
+# Misc
+# =========================
+node_modules/
+wwwroot/lib/
+wwwroot/dist/
+dist/
+tmp/
+
