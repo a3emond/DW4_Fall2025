@@ -53,7 +53,7 @@ App_Data/aspnet-client/
 
 # =========================
 # SQL Dumps (ignore large raw dumps, but keep schema/migrations)
-*.sql
+# *.sql
 !schema.sql
 !migrations/**
 
