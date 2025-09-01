@@ -1,4 +1,5 @@
 using System;
+using System.Data.SqlClient;
 using System.Web;
 
 namespace SimpleWebApp
@@ -7,7 +8,21 @@ namespace SimpleWebApp
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            
+            try
+            {
+                string connStr = System.Configuration.ConfigurationManager
+                    .ConnectionStrings["main_db"].ConnectionString;
+
+                using (var conn = new SqlConnection(connStr)) //using statement -> connection will be closed and disposed automatically
+                {
+                    conn.Open();
+                    Console.WriteLine("Database connection successful!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Database connection failed: " + ex.Message);
+            }
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
