@@ -64,19 +64,19 @@ docker-compose up -d
 **From host (Rider, Visual Studio, Azure Data Studio, etc.):**
 
 ```text
-Server=localhost,1433;Database=main-db;User Id=sa;Password=password;TrustServerCertificate=True;
+Server=localhost,1433;Database=main-db;User Id=sa;Password=Password123!;TrustServerCertificate=True;
 ```
 
 **From host without targeting a specific DB (defaults to master):**
 
 ```text
-Server=localhost,1433;User Id=sa;Password=password;TrustServerCertificate=True;
+Server=localhost,1433;User Id=sa;Password=Password123!;TrustServerCertificate=True;
 ```
 
 **From another container on the `devnet` network:**
 
 ```text
-Server=mssql,1433;Database=main-db;User Id=sa;Password=password;TrustServerCertificate=True;
+Server=mssql,1433;Database=main-db;User Id=sa;Password=Password123!;TrustServerCertificate=True;
 ```
 
 ### Initialization scripts

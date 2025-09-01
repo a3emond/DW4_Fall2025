@@ -4,7 +4,7 @@ services:
     container_name: mssql
     environment:
       - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=password
+      - MSSQL_SA_PASSWORD=Password123!
       - MSSQL_PID=Developer
     ports:
       - "1433:1433"
@@ -29,20 +29,20 @@ networks:
 #   Server=localhost,1433;
 #   Database=main-db;
 #   User Id=sa;
-#   Password=password;
+#   Password=Password123!;
 #   TrustServerCertificate=True;
 #
 # Without database (connects to master):
 #   Server=localhost,1433;
 #   User Id=sa;
-#   Password=password;
+#   Password=Password123!;
 #   TrustServerCertificate=True;
 #
 # From another container on the 'devnet' network:
 #   Server=mssql,1433;
 #   Database=main-db;
 #   User Id=sa;
-#   Password=password;
+#   Password=Password123!;
 #   TrustServerCertificate=True;
 # ==========================================
 
