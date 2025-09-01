@@ -1,6 +1,6 @@
 services:
   mssql:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    build: ./init-sql
     container_name: mssql
     environment:
       - ACCEPT_EULA=Y
@@ -10,7 +10,6 @@ services:
       - "1433:1433"
     volumes:
       - mssql_data:/var/opt/mssql
-      - ./init-sql:/docker-entrypoint-initdb.d
     networks:
       - devnet
     restart: unless-stopped
