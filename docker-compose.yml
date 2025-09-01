@@ -26,7 +26,7 @@ networks:
 #
 # With explicit database (recommended):
 #   Server=localhost,1433;
-#   Database=main-db;
+#   Database=main_db;
 #   User Id=sa;
 #   Password=Password123!;
 #   TrustServerCertificate=True;
@@ -39,7 +39,7 @@ networks:
 #
 # From another container on the 'devnet' network:
 #   Server=mssql,1433;
-#   Database=main-db;
+#   Database=main_db;
 #   User Id=sa;
 #   Password=Password123!;
 #   TrustServerCertificate=True;

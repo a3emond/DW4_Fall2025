@@ -1,7 +1,7 @@
-CREATE DATATABASE main-db;
+CREATE DATABASE [main_db];
 GO
 
-USE main-db;
+USE [main_db];
 GO
 
 CREATE TABLE users (
@@ -13,4 +13,3 @@ CREATE TABLE users (
     created_at DATETIME DEFAULT GETDATE()
 );
 GO
-
