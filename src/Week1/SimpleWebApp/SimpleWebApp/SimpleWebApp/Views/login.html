@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js" defer></script>
+</head>
+<body>
+<div class="card">
+    <h1>Login</h1>
+    <form id="login-form">
+        <input type="email" id="email" placeholder="Email" required>
+        <ul id="email-feedback" class="feedback"></ul>
+
+        <input type="password" id="password" placeholder="Password" required>
+        <ul id="password-feedback" class="feedback"></ul>
+
+        <button type="submit">Login</button>
+        <p id="form-error" class="error"></p>
+    </form>
+
+    <p style="text-align:center; margin-top:15px;">
+        Not registered? <a href="/register">Register</a>
+    </p>
+</div>
+</body>
+</html>

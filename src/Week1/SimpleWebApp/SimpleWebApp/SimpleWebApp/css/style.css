@@ -1,0 +1,93 @@
+/* Reset / global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #eceff1; /* subtle gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* full height */
+}
+
+/* Card container */
+.card {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs */
+input {
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #1976d2;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #125aa0;
+}
+
+/* Feedback lists */
+.feedback {
+    margin: -5px 0 10px;
+    padding-left: 18px;
+    font-size: 12px;
+    color: #d00;
+}
+
+.feedback li.valid {
+    color: green;
+    text-decoration: line-through;
+}
+
+/* Error messages */
+.error {
+    color: #d00;
+    margin-top: -5px;
+    font-size: 13px;
+    text-align: center;
+}

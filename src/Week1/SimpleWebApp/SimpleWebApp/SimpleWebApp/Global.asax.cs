@@ -1,6 +1,8 @@
 using System;
 using System.Data.SqlClient;
 using System.Web;
+using Newtonsoft.Json;
+using SimpleWebApp.Controllers;
 
 namespace SimpleWebApp
 {
@@ -13,7 +15,7 @@ namespace SimpleWebApp
                 string connStr = System.Configuration.ConfigurationManager
                     .ConnectionStrings["main_db"].ConnectionString;
 
-                using (var conn = new SqlConnection(connStr)) //using statement -> connection will be closed and disposed automatically
+                using (var conn = new SqlConnection(connStr))
                 {
                     conn.Open();
                     Console.WriteLine("Database connection successful!");
@@ -27,59 +29,96 @@ namespace SimpleWebApp
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            string path = Request.Path.ToLower();
+            string path = Request.Path.ToLower().TrimEnd('/'); // normalize path
 
-            if (path == "/" || path == "/index")
+            // === Static files (css, js, images, favicon) ===
+            if (path.EndsWith(".css") || path.EndsWith(".js") ||
+                path.EndsWith(".png") || path.EndsWith(".jpg") ||
+                path.EndsWith(".jpeg") || path.EndsWith(".gif") ||
+                path.EndsWith(".ico"))
             {
-                Response.ContentType = "text/html";
-                Response.WriteFile("~/Views/index.html");
-                Response.End();
+                return; // Let IIS/ASP.NET serve them directly
+            }
+
+            // === Static views ===
+            if (path == "" || path == "/" || path == "/index")
+            {
+                ServeStatic("~/Views/index.html");
             }
             else if (path == "/login")
             {
-                Response.ContentType = "text/html";
-                Response.WriteFile("~/Views/login.html");
-                Response.End();
+                ServeStatic("~/Views/login.html");
             }
             else if (path == "/register")
             {
-                Response.ContentType = "text/html";
-                Response.WriteFile("~/Views/register.html");
-                Response.End();
+                ServeStatic("~/Views/register.html");
             }
+            // === API routing ===
             else if (path.StartsWith("/api/"))
             {
-                HandleApi(path);
+                RouteApi(path, Context);
             }
+            // === Fallback ===
             else
             {
-                Response.StatusCode = 404;
-                Response.Write("404 - Not Found");
-                Response.End();
+                JsonError(Response, 404, "Not Found");
             }
         }
 
-        private void HandleApi(string path)
+        private void ServeStatic(string filePath)
         {
-            Response.ContentType = "application/json";
+            Response.ContentType = "text/html";
+            Response.WriteFile(filePath);
+            Response.End();
+        }
 
-            if (path == "/api/login")
+        private void RouteApi(string path, HttpContext context)
+        {
+            var segments = path.Trim('/').Split('/');
+            if (segments.Length < 2)
             {
-                // TODO: call UserService.Authenticate() and return JSON
-                Response.Write("{\"status\":\"ok\",\"message\":\"login endpoint\"}");
+                JsonError(Response, 404, "Invalid API route");
+                return;
             }
-            else if (path == "/api/register")
+
+            string controllerName = segments[1];
+            IController controller;
+
+            switch (controllerName)
             {
-                // TODO: call UserService.Register() and return JSON
-                Response.Write("{\"status\":\"ok\",\"message\":\"register endpoint\"}");
+                case "user":
+                case "admin":
+                case "register":
+                case "profile":
+                    controller = new UserController();
+                    break;
+                case "auth":
+                case "login":
+                case "logout":
+                    controller = new AuthController();
+                    break;
+                default:
+                    controller = null;
+                    break;
+            }
+
+            if (controller != null)
+            {
+                controller.Handle(context);
             }
             else
             {
-                Response.StatusCode = 404;
-                Response.Write("{\"status\":\"error\",\"message\":\"Unknown API route\"}");
+                JsonError(Response, 404, "Controller Not Found");
             }
+        }
 
-            Response.End();
+
+        private void JsonError(HttpResponse response, int statusCode, string message)
+        {
+            response.StatusCode = statusCode;
+            response.ContentType = "application/json";
+            response.Write(JsonConvert.SerializeObject(new { error = message }));
+            response.End();
         }
     }
 }

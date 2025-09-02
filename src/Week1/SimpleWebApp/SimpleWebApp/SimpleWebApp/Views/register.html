@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js" defer></script>
+</head>
+<body>
+<div class="card">
+    <h1>Register</h1>
+    <form id="register-form">
+        <input type="text" id="username" placeholder="Username" required>
+
+        <input type="email" id="email" placeholder="Email" required>
+        <ul id="email-feedback" class="feedback"></ul>
+
+        <input type="password" id="password" placeholder="Password" required>
+        <ul id="password-feedback" class="feedback"></ul>
+
+        <input type="password" id="confirm" placeholder="Confirm Password" required>
+        <ul id="confirm-feedback" class="feedback"></ul>
+
+        <button type="submit">Register</button>
+        <p id="form-error" class="error"></p>
+    </form>
+
+    <p style="text-align:center; margin-top:15px;">
+        Already have an account? <a href="/login">Login</a>
+    </p>
+</div>
+</body>
+</html>
