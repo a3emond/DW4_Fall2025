@@ -67,7 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\pizza1.jpg" />
+    <Content Include="images\pizza2.jpg" />
+    <Content Include="images\pizza3.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="Index.aspx.css" />
+    <Content Include="Index.aspx.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

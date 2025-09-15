@@ -60,22 +60,13 @@ namespace PizzeriaSSR
         protected global::System.Web.UI.WebControls.Label lblPhilosophy;
 
         /// <summary>
-        /// pnlMain control.
+        /// pnlFeaturedWrapper control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlMain;
-
-        /// <summary>
-        /// pnlFeatured control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlFeatured;
+        protected global::System.Web.UI.WebControls.Panel pnlFeaturedWrapper;
 
         /// <summary>
         /// lblFeatured control.
@@ -85,6 +76,15 @@ namespace PizzeriaSSR
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFeatured;
+
+        /// <summary>
+        /// pnlFeatured control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlFeatured;
 
         /// <summary>
         /// imgPizza1 control.
@@ -112,6 +112,15 @@ namespace PizzeriaSSR
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgPizza3;
+
+        /// <summary>
+        /// pnlMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlMain;
 
         /// <summary>
         /// pnlForm control.
@@ -150,6 +159,15 @@ namespace PizzeriaSSR
         protected global::System.Web.UI.WebControls.TextBox txtBoxName;
 
         /// <summary>
+        /// lblNameError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNameError;
+
+        /// <summary>
         /// lblPhone control.
         /// </summary>
         /// <remarks>
@@ -166,6 +184,15 @@ namespace PizzeriaSSR
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBoxPhone;
+
+        /// <summary>
+        /// lblPhoneError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPhoneError;
 
         /// <summary>
         /// CheckBoxDelivery control.
@@ -193,6 +220,42 @@ namespace PizzeriaSSR
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBoxAddress;
+
+        /// <summary>
+        /// lblAddressError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddressError;
+
+        /// <summary>
+        /// lblSpeciality control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSpeciality;
+
+        /// <summary>
+        /// ddlSpeciality control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSpeciality;
+
+        /// <summary>
+        /// pnlCustomPizza control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCustomPizza;
 
         /// <summary>
         /// lblCustomTitle control.
@@ -276,6 +339,51 @@ namespace PizzeriaSSR
         protected global::System.Web.UI.WebControls.CheckBoxList cblToppings;
 
         /// <summary>
+        /// lblSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSize;
+
+        /// <summary>
+        /// ddlSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSize;
+
+        /// <summary>
+        /// lblQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuantity;
+
+        /// <summary>
+        /// txtQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
+
+        /// <summary>
+        /// lblQuantityError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuantityError;
+
+        /// <summary>
         /// btnCalculate control.
         /// </summary>
         /// <remarks>
@@ -303,12 +411,21 @@ namespace PizzeriaSSR
         protected global::System.Web.UI.WebControls.Button btnSubmit;
 
         /// <summary>
-        /// lblConfirmation control.
+        /// pnlInvoice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirmation;
+        protected global::System.Web.UI.WebControls.Panel pnlInvoice;
+
+        /// <summary>
+        /// litInvoice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litInvoice;
     }
 }

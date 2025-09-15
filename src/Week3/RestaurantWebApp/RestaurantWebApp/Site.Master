@@ -1,0 +1,38 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="SimpleWebApp.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <form id="masterForm" runat="server">
+        <!-- Hero/Header -->
+        <header class="hero">
+            <h1>Restaurant WebApp</h1>
+            <p>Your tagline or welcome text goes here.</p>
+        </header>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <a href="/Views/index.aspx">Home</a>
+            <asp:PlaceHolder ID="phUser" runat="server"></asp:PlaceHolder>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; <%= DateTime.Now.Year %> Restaurant WebApp. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>

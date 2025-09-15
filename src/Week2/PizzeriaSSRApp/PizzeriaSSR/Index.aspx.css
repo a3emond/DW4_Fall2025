@@ -1,0 +1,169 @@
+﻿html, body, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* vertical stack */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#fdf4d9, #ffeaa7);
+    height: 100%;
+    color: #333;
+}
+
+/* header at top */
+.header {
+    background-color: #d35400; /* pizza crust color */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* banner under header */
+.banner {
+    background-color: #e67e22; /* sauce/cheese tone */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* main content fills remaining space */
+.main {
+    flex: 1; /* take all available height */
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: flex-start; /* align at top, allow multiple sections */
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap; /* adapt on small screens */
+}
+
+.featured-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.featured {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff8ee;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+    .featured .image-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+    }
+
+        .featured .image-wrapper img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .featured .image-wrapper .label {
+            position: absolute;
+            inset: 0; /* fill wrapper */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 6px;
+        }
+
+        /* Hover effect */
+        .featured .image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .featured .image-wrapper:hover .label {
+            opacity: 1;
+        }
+
+/* order form box */
+.form-container {
+    background-color: #fff3e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 400px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+/* invoice box */
+.invoice {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    width: 400px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+    /* title inside invoice */
+    .invoice h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #d35400; /* crust color */
+        text-align: center;
+        border-bottom: 2px solid #e67e22;
+        padding-bottom: 0.5rem;
+    }
+
+    /* subheading in invoice */
+    .invoice h4 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        color: #e67e22; /* sauce/cheese tone */
+    }
+
+    /* paragraphs */
+    .invoice p {
+        margin: 0.25rem 0;
+    }
+
+    /* lists */
+    .invoice ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0.5rem 0;
+    }
+
+        .invoice ul ul {
+            padding-left: 1rem;
+            list-style-type: disc;
+        }
+
+    .invoice li {
+        margin: 0.25rem 0;
+    }
+
+    /* highlight important values */
+    .invoice strong {
+        color: #d35400;
+    }
+
+    /* total line more visible */
+    .invoice li:last-child {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background-color: #fff3e0;
+        border-radius: 4px;
+        font-size: 1.05rem;
+    }
