@@ -1,0 +1,20 @@
+$root = "D:\dev\DW4_Fall2025\src\Week3\RestaurantWebApp\RestaurantWebApp\Assets"
+
+$categories = @{
+    "appetizers"   = "Appetizer"
+    "main_dishes"  = "Main"
+    "side_dishes"  = "Side"
+    "desserts"     = "Dessert"
+}
+
+foreach ($folder in $categories.Keys) {
+    $cat = $categories[$folder]
+    Get-ChildItem "$root\$folder" | ForEach-Object {
+        $name = [System.IO.Path]::GetFileNameWithoutExtension($_.Name) -replace "[-_]", " "
+        $sql = "INSERT INTO menu_items (name, category, description, price) VALUES ('$name', '$cat', 'TBD description', 0.00);"
+        $sql += "`nDECLARE @id INT = SCOPE_IDENTITY();"
+        $sql += "`nINSERT INTO menu_item_media (menu_item_id, file_name, is_primary) VALUES (@id, '$($_.Name)', 1);"
+        $sql += "`nGO`n"
+        Add-Content "menu_seed.sql" $sql
+    }
+}
