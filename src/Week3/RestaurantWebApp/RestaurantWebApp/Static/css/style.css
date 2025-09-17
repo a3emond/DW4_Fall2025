@@ -355,3 +355,25 @@ h1 {
         border-top: 1px solid #ddd;
         padding-top: 4px;
     }
+
+
+.category-header {
+    cursor: pointer;
+    background: #116466;
+    color: #fff;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.category-items {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 9999px; /* fallback -> resolved in js inside index.aspx */
+}
+
+    .category-items.closed {
+        max-height: 0;
+        padding: 0;
+    }

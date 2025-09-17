@@ -43,6 +43,17 @@ namespace SimpleWebApp.Views
         private void LoadMenu()
         {
             var items = _menuItemService.GetAll();
+
+            var categoryOrder = new List<string>
+            {
+                "Appetizer",
+                "Main",
+                "Side",
+                "Drink",
+                "Liquor",
+                "Dessert"
+            };
+
             var grouped = items
                 .GroupBy(m => m.Category)
                 .Select(g => new
@@ -57,11 +68,18 @@ namespace SimpleWebApp.Views
                         ThumbnailUrl = ResolveMedia(i.Id)
                     }).ToList()
                 })
+                .OrderBy(g =>
+                {
+                    var index = categoryOrder.IndexOf(g.Category);
+                    return index == -1 ? int.MaxValue : index; // unknown categories go last
+                })
                 .ToList();
-            
+
             rptCategories.DataSource = grouped;
             rptCategories.DataBind();
         }
+
+
         // asset folder mapping based on category
         private static readonly Dictionary<string, string> CategoryFolderMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {

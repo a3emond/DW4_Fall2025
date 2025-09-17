@@ -37,31 +37,36 @@
             <asp:Repeater ID="rptCategories" runat="server">
                 <ItemTemplate>
                     <div class="menu-category mb-4">
-                        <h3><%# Eval("Category") %></h3>
-                        <div class="menu-items d-flex flex-wrap">
-                            <asp:Repeater ID="rptItems" runat="server"
-                                          DataSource='<%# Eval("Items") %>'
-                                          OnItemCommand="rptItems_ItemCommand">
-                                <ItemTemplate>
-                                    <div class="menu-item card m-2 p-2">
-                                        <asp:Image ID="imgThumb" runat="server"
-                                            width="100px"
-                                            ImageUrl='<%# Eval("ThumbnailUrl") %>'
-                                            Visible='<%# Eval("ThumbnailUrl") != null %>'
-                                            CssClass="card-img-top" AlternateText='<%# Eval("Name") %>' />
+                        <h3 class="category-header" onclick="toggleCategory('<%# Container.ItemIndex %>')">
+                            <%# Eval("Category") %>
+                        </h3>
+                        <div id="cat_<%# Container.ItemIndex %>" class="category-items closed">
+                            <div class="menu-items d-flex flex-wrap">
+                                <asp:Repeater ID="rptItems" runat="server"
+                                              DataSource='<%# Eval("Items") %>'
+                                              OnItemCommand="rptItems_ItemCommand">
+                                    <ItemTemplate>
+                                        <div class="menu-item card m-2 p-2">
+                                            <asp:Image ID="imgThumb" runat="server"
+                                                width="100px"
+                                                ImageUrl='<%# Eval("ThumbnailUrl") %>'
+                                                Visible='<%# Eval("ThumbnailUrl") != null %>'
+                                                CssClass="card-img-top"
+                                                AlternateText='<%# Eval("Name") %>' />
 
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title"><%# Eval("Name") %></h5>
-                                            <p class="fw-bold">$<%# Eval("Price", "{0:F2}") %></p>
-                                            <asp:Button ID="btnView" runat="server"
-                                                Text="View"
-                                                CssClass="btn btn-sm btn-outline-primary"
-                                                CommandName="ViewItem"
-                                                CommandArgument='<%# Eval("Id") %>' />
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title"><%# Eval("Name") %></h5>
+                                                <p class="fw-bold">$<%# Eval("Price", "{0:F2}") %></p>
+                                                <asp:Button ID="btnView" runat="server"
+                                                    Text="View"
+                                                    CssClass="btn btn-sm btn-outline-primary"
+                                                    CommandName="ViewItem"
+                                                    CommandArgument='<%# Eval("Id") %>' />
+                                            </div>
                                         </div>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -141,5 +146,49 @@
         </div>
     </div>
 </asp:Panel>
+
+<script>
+    // Collapsible Section functionnalities
+    
+    function toggleCategory(id) {
+        const current = document.getElementById("cat_" + id);
+        const all = document.querySelectorAll(".category-items");
+
+        if (current.classList.contains("open")) {
+            // collapse the clicked one
+            collapse(current);
+        } else {
+            // close all others
+            all.forEach(el => {
+                if (el.classList.contains("open")) {
+                    collapse(el);
+                }
+            });
+            // open the clicked one
+            expand(current);
+        }
+    }
+
+    function expand(el) {
+        el.style.maxHeight = el.scrollHeight + "px";
+        el.classList.add("open");
+
+        el.addEventListener("transitionend", function handler() {
+            el.style.maxHeight = "none"; // allow unlimited growth after animation
+            el.removeEventListener("transitionend", handler);
+        });
+    }
+
+    function collapse(el) {
+        el.style.maxHeight = el.scrollHeight + "px"; // set current height
+        requestAnimationFrame(() => {
+            el.style.maxHeight = "0";
+        });
+        el.classList.remove("open");
+    }
+</script>
+
+
+
 
 </asp:Content>
