@@ -8,10 +8,13 @@
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
 
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="Static/css/style.css" />
+    <script scr="Static/js/main.js" defer></script>
 </head>
 <body>
     <form id="masterForm" runat="server">
+        <asp:HiddenField ID="ScrollPos" runat="server" />
+
         <!-- Hero/Header -->
         <header class="hero">
             <h1>Restaurant WebApp</h1>
@@ -34,5 +37,18 @@
             <p>&copy; <%= DateTime.Now.Year %> Restaurant WebApp. All rights reserved.</p>
         </footer>
     </form>
+    <script type="text/javascript">
+        window.onload = function () {
+            // restore scroll
+            var scrollY = document.getElementById("<%= ScrollPos.ClientID %>").value;
+            if (scrollY) window.scrollTo(0, parseInt(scrollY));
+        };
+
+        window.onscroll = function () {
+            // save scroll
+            document.getElementById("<%= ScrollPos.ClientID %>").value = window.scrollY;
+            };
+        </script>
+
 </body>
 </html>

@@ -133,15 +133,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Services\IMenuItemMediaService.cs" />
-    <Compile Include="Services\IReservationBlockAllocationService.cs" />
-    <Compile Include="Services\IReservationGuestService.cs" />
-    <Compile Include="Services\IReservationOrderService.cs" />
-    <Compile Include="Services\IReservationService.cs" />
-    <Compile Include="Services\IReservationTimeblockService.cs" />
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\GuestCart.cs" />
+    <Compile Include="Services\Interfaces\IMenuItemMediaService.cs" />
+    <Compile Include="Services\Interfaces\IReservationBlockAllocationService.cs" />
+    <Compile Include="Services\Interfaces\IReservationGuestService.cs" />
+    <Compile Include="Services\Interfaces\IReservationOrderService.cs" />
+    <Compile Include="Services\Interfaces\IReservationService.cs" />
+    <Compile Include="Services\Interfaces\IReservationTimeblockService.cs" />
     <Compile Include="Services\MenuItemMediaService.cs" />
     <Compile Include="Services\MenuItemService.cs" />
-    <Compile Include="Repositories\IReservationBlockAllocationRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IReservationBlockAllocationRepository.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\MenuItemMedia.cs" />
     <Compile Include="Models\Reservation.cs" />
@@ -154,14 +156,14 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DbHelper.cs" />
-    <Compile Include="Repositories\IMenuItemMediaRepository.cs" />
-    <Compile Include="Repositories\IMenuItemRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\IReservationGuestRepository.cs" />
-    <Compile Include="Repositories\IReservationOrderRepository.cs" />
-    <Compile Include="Repositories\IReservationRepository.cs" />
-    <Compile Include="Repositories\IReservationTimeblockRepository.cs" />
-    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IMenuItemMediaRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IMenuItemRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IReservationGuestRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IReservationOrderRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IReservationRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IReservationTimeblockRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="Repositories\MenuItemMediaRepository.cs" />
     <Compile Include="Repositories\MenuItemRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
@@ -171,9 +173,9 @@
     <Compile Include="Repositories\ReservationTimeblockRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\IMenuItemService.cs" />
-    <Compile Include="Services\IService.cs" />
-    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\Interfaces\IMenuItemService.cs" />
+    <Compile Include="Services\Interfaces\IService.cs" />
+    <Compile Include="Services\Interfaces\IUserService.cs" />
     <Compile Include="Services\ReservationBlockAllocationService.cs" />
     <Compile Include="Services\ReservationGuestService.cs" />
     <Compile Include="Services\ReservationOrderService.cs" />
@@ -218,11 +220,11 @@
     <Content Include="Assets\appetizers\jalapeno-poppers-1.jpg" />
     <Content Include="Assets\appetizers\stuffed-mushrooms-1.jpg" />
     <Content Include="Assets\appetizers\zucchini-chips.jpg" />
-    <Content Include="Assets\main_room.jpg" />
+    <Content Include="Assets\misc\main_room.jpg" />
     <Content Include="Assets\side_dishes\smashed-brussels-sprouts-lead-6733770d088f9.jpg" />
-    <Content Include="css\style.css" />
+    <Content Include="Static\css\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="js\main.js" />
+    <Content Include="Static\js\main.js" />
     <Content Include="Views\index.aspx" />
     <Content Include="Views\login.aspx" />
     <Content Include="Views\register.aspx" />
@@ -265,6 +267,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

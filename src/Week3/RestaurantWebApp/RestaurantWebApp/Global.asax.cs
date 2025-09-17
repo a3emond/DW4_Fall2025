@@ -32,13 +32,20 @@ namespace SimpleWebApp
             string path = Request.Path.ToLower().TrimEnd('/'); // normalize path
 
             // === Static files (css, js, images, favicon) ===
-            if (path.EndsWith(".css") || path.EndsWith(".js") ||
-                path.EndsWith(".png") || path.EndsWith(".jpg") ||
-                path.EndsWith(".jpeg") || path.EndsWith(".gif") ||
-                path.EndsWith(".ico"))
+            if (path.EndsWith(".css", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".js", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".gif", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".ico", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".svg", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".webp", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".avif", StringComparison.OrdinalIgnoreCase))
             {
                 return; // Let IIS/ASP.NET serve them directly
             }
+
 
             // === Let ASP.NET handle .aspx pages directly ===
             if (path.EndsWith(".aspx"))
